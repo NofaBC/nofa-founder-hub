@@ -1,0 +1,765 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Farhad Nasserghodsi | NOFA AI Factory</title>
+  <meta name="description" content="Founder hub for Farhad Nasserghodsi, AI Systems Architect and founder of NOFA AI Factory. Explore current live products, contact details, office access, and CareerPilot AI." />
+  <style>
+    :root {
+      --bg: #f7f9fc;
+      --surface: #ffffff;
+      --surface-soft: #eef4ff;
+      --text: #0f172a;
+      --muted: #475569;
+      --line: #dbe4f0;
+      --brand: #2558ff;
+      --brand-dark: #1738a3;
+      --accent: #6d28d9;
+      --success: #10b981;
+      --shadow: 0 18px 48px rgba(15, 23, 42, 0.08);
+      --radius: 24px;
+      --max: 1180px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: Inter, Arial, Helvetica, sans-serif;
+      background:
+        radial-gradient(circle at top right, rgba(37, 88, 255, 0.1), transparent 28%),
+        linear-gradient(180deg, #fbfdff 0%, #f7f9fc 100%);
+      color: var(--text);
+    }
+
+    a { color: inherit; text-decoration: none; }
+    img { max-width: 100%; display: block; }
+
+    .container {
+      width: min(calc(100% - 32px), var(--max));
+      margin: 0 auto;
+    }
+
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      backdrop-filter: blur(12px);
+      background: rgba(255, 255, 255, 0.86);
+      border-bottom: 1px solid rgba(219, 228, 240, 0.85);
+    }
+
+    .topbar-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+      padding: 14px 0;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      min-width: 0;
+    }
+
+    .brand img {
+      width: 44px;
+      height: 44px;
+      object-fit: contain;
+      border-radius: 14px;
+      background: #fff;
+      border: 1px solid var(--line);
+      padding: 6px;
+      box-shadow: 0 8px 24px rgba(37, 88, 255, 0.08);
+    }
+
+    .brand h1 {
+      margin: 0;
+      font-size: 0.96rem;
+      line-height: 1.1;
+      letter-spacing: 0.02em;
+    }
+
+    .brand span {
+      display: block;
+      color: var(--muted);
+      font-size: 0.83rem;
+      margin-top: 2px;
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+    }
+
+    .nav a {
+      color: var(--muted);
+      font-size: 0.94rem;
+      font-weight: 600;
+    }
+
+    .nav .cta {
+      padding: 12px 18px;
+      background: var(--brand);
+      color: #fff;
+      border-radius: 999px;
+      box-shadow: 0 12px 28px rgba(37, 88, 255, 0.24);
+    }
+
+    .hero {
+      padding: 36px 0 22px;
+    }
+
+    .hero-card {
+      background: linear-gradient(135deg, rgba(255,255,255,0.98), rgba(244,248,255,0.98));
+      border: 1px solid rgba(219, 228, 240, 0.95);
+      border-radius: 32px;
+      box-shadow: var(--shadow);
+      overflow: hidden;
+      position: relative;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 34px;
+      align-items: center;
+      padding: 34px;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: #fff;
+      border: 1px solid var(--line);
+      color: var(--brand-dark);
+      padding: 10px 14px;
+      border-radius: 999px;
+      font-size: 0.85rem;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      margin-bottom: 18px;
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 9px;
+      height: 9px;
+      border-radius: 50%;
+      background: var(--success);
+      box-shadow: 0 0 0 7px rgba(16, 185, 129, 0.12);
+    }
+
+    .hero h2 {
+      margin: 0;
+      font-size: clamp(2rem, 5vw, 4rem);
+      line-height: 0.98;
+      letter-spacing: -0.04em;
+      max-width: 12ch;
+    }
+
+    .hero h2 .accent {
+      color: var(--brand);
+    }
+
+    .hero p {
+      font-size: 1.08rem;
+      line-height: 1.7;
+      color: var(--muted);
+      max-width: 64ch;
+      margin: 18px 0 0;
+    }
+
+    .quick-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 22px;
+    }
+
+    .quick-meta span {
+      background: #fff;
+      border: 1px solid var(--line);
+      padding: 10px 14px;
+      border-radius: 999px;
+      color: var(--text);
+      font-size: 0.92rem;
+      font-weight: 600;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+      margin-top: 28px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 14px 20px;
+      border-radius: 16px;
+      font-weight: 700;
+      font-size: 0.97rem;
+      transition: transform 0.18s ease, box-shadow 0.18s ease, background 0.18s ease;
+      border: 1px solid transparent;
+    }
+
+    .btn:hover { transform: translateY(-2px); }
+    .btn-primary {
+      background: linear-gradient(135deg, var(--brand), #4f7bff);
+      color: white;
+      box-shadow: 0 16px 30px rgba(37, 88, 255, 0.2);
+    }
+    .btn-secondary {
+      background: #fff;
+      border-color: var(--line);
+      color: var(--text);
+    }
+
+    .portrait-wrap {
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: end;
+      min-height: 100%;
+    }
+
+    .portrait-glow {
+      position: absolute;
+      inset: auto 10% 8% 10%;
+      height: 68%;
+      background: radial-gradient(circle, rgba(37, 88, 255, 0.2), transparent 68%);
+      filter: blur(8px);
+      z-index: 0;
+      pointer-events: none;
+    }
+
+    .portrait-card {
+      position: relative;
+      z-index: 1;
+      width: min(100%, 420px);
+      background: linear-gradient(180deg, #ffffff, #eff4ff);
+      border: 1px solid var(--line);
+      border-radius: 28px;
+      padding: 20px 18px 0;
+      box-shadow: 0 20px 40px rgba(15, 23, 42, 0.08);
+      overflow: hidden;
+    }
+
+    .portrait-card img {
+      width: 100%;
+      height: auto;
+      object-fit: contain;
+      margin: 0 auto;
+    }
+
+    .factory-strip {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin: 0 34px 34px;
+      padding: 14px 18px;
+      border-radius: 20px;
+      background: linear-gradient(135deg, #eef4ff, #f8fbff);
+      border: 1px solid #d7e3ff;
+      color: #163173;
+      font-size: 0.98rem;
+      font-weight: 600;
+    }
+
+    .factory-strip .dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: var(--success);
+      flex-shrink: 0;
+      animation: pulse 2s infinite;
+    }
+
+    .factory-strip strong { color: var(--text); }
+    .factory-strip .countdown { color: var(--accent); }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.55; transform: scale(0.92); }
+    }
+
+    section {
+      padding: 14px 0 28px;
+    }
+
+    .section-title {
+      margin: 0 0 16px;
+      font-size: 1.9rem;
+      letter-spacing: -0.03em;
+    }
+
+    .section-copy {
+      margin: 0 0 24px;
+      color: var(--muted);
+      font-size: 1.02rem;
+      line-height: 1.7;
+      max-width: 72ch;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 22px;
+      box-shadow: var(--shadow);
+    }
+
+    .card h3 {
+      margin: 0 0 10px;
+      font-size: 1.15rem;
+      letter-spacing: -0.02em;
+    }
+
+    .card p {
+      margin: 0;
+      color: var(--muted);
+      line-height: 1.7;
+    }
+
+    .spotlight {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 20px;
+      align-items: stretch;
+    }
+
+    .spotlight-visual {
+      padding: 0;
+      overflow: hidden;
+    }
+
+    .spotlight-visual img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .label {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--accent);
+      font-size: 0.84rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 14px;
+    }
+
+    .metric-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
+      margin-top: 20px;
+    }
+
+    .metric {
+      background: var(--surface-soft);
+      border: 1px solid #dbe4ff;
+      border-radius: 18px;
+      padding: 16px;
+    }
+
+    .metric strong {
+      display: block;
+      font-size: 1.2rem;
+      margin-bottom: 4px;
+    }
+
+    .metric span {
+      color: var(--muted);
+      font-size: 0.92rem;
+      line-height: 1.5;
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 20px;
+    }
+
+    .contact-list {
+      display: grid;
+      gap: 14px;
+    }
+
+    .contact-item {
+      display: flex;
+      align-items: start;
+      gap: 14px;
+      padding: 16px 18px;
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 18px;
+    }
+
+    .contact-icon {
+      width: 42px;
+      height: 42px;
+      border-radius: 14px;
+      background: var(--surface-soft);
+      color: var(--brand-dark);
+      display: grid;
+      place-items: center;
+      font-weight: 800;
+      flex-shrink: 0;
+    }
+
+    .contact-item small {
+      display: block;
+      color: var(--muted);
+      margin-bottom: 4px;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      font-size: 0.72rem;
+      font-weight: 800;
+    }
+
+    .contact-item strong {
+      display: block;
+      font-size: 1rem;
+      line-height: 1.45;
+    }
+
+    .contact-item span {
+      display: block;
+      color: var(--muted);
+      margin-top: 4px;
+      font-size: 0.93rem;
+      line-height: 1.55;
+    }
+
+    .qr-card {
+      display: grid;
+      place-items: center;
+      text-align: center;
+      background: linear-gradient(180deg, #ffffff, #f8fbff);
+    }
+
+    .qr-frame {
+      max-width: 320px;
+      width: 100%;
+      background: #fff;
+      border-radius: 26px;
+      border: 1px solid var(--line);
+      padding: 18px;
+      box-shadow: 0 18px 40px rgba(109, 40, 217, 0.08);
+    }
+
+    .qr-frame img {
+      border-radius: 18px;
+      width: 100%;
+      height: auto;
+      object-fit: contain;
+      background: #f9f7ff;
+    }
+
+    .qr-frame p {
+      margin: 14px 0 0;
+      font-size: 0.95rem;
+      color: var(--muted);
+      line-height: 1.6;
+    }
+
+    .footer {
+      padding: 20px 0 44px;
+      color: var(--muted);
+      font-size: 0.94rem;
+      text-align: center;
+    }
+
+    @media (max-width: 1060px) {
+      .hero-grid,
+      .spotlight,
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .cards {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media (max-width: 720px) {
+      .topbar-inner,
+      .nav {
+        align-items: flex-start;
+      }
+
+      .topbar-inner {
+        flex-direction: column;
+      }
+
+      .hero-grid {
+        padding: 22px;
+      }
+
+      .factory-strip {
+        margin: 0 22px 22px;
+        align-items: flex-start;
+      }
+
+      .cards,
+      .metric-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero h2 {
+        max-width: 100%;
+      }
+
+      .btn,
+      .nav .cta {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="container topbar-inner">
+      <div class="brand">
+        <img src="assets/nofa-logo.png" alt="NOFA AI Factory logo" />
+        <div>
+          <h1>NOFA AI Factory</h1>
+          <span>Founder Hub · Light Theme</span>
+        </div>
+      </div>
+      <nav class="nav" aria-label="Primary navigation">
+        <a href="#about">About</a>
+        <a href="#spotlight">Live SaaS</a>
+        <a href="#contact">Contact</a>
+        <a class="cta" href="https://nofabusinessconsulting.com/careerpilot-ai/" target="_blank" rel="noopener noreferrer">Try CareerPilot AI</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container">
+        <div class="hero-card">
+          <div class="hero-grid">
+            <div>
+              <div class="eyebrow">Founder · AI Systems Architect</div>
+              <h2>Farhad <span class="accent">Nasserghodsi</span></h2>
+              <p>
+                I design AI systems, turn them into working SaaS products, and keep the NOFA AI Factory moving forward one product at a time.
+                This page is the clean entry point to my current live build, business contact details, and virtual office access.
+              </p>
+              <div class="quick-meta" aria-label="Quick information">
+                <span>NOFA AI Factory™</span>
+                <span>Gaithersburg, Maryland</span>
+                <span>Office Hours: 9:00 AM–5:00 PM, Mon–Fri</span>
+              </div>
+              <div class="hero-actions">
+                <a class="btn btn-primary" href="https://nofabusinessconsulting.com/" target="_blank" rel="noopener noreferrer">Visit Website</a>
+                <a class="btn btn-secondary" href="mailto:farhad@nofabusinessconsulting.com">Email Farhad</a>
+                <a class="btn btn-secondary" href="https://app.teemyco.com/room/lfdmBqyvzC2U7mZcTkxA/ATmQWTDTlcMZ4ZmKRzCm" target="_blank" rel="noopener noreferrer">Enter Virtual Office</a>
+              </div>
+            </div>
+            <div class="portrait-wrap">
+              <div class="portrait-glow"></div>
+              <div class="portrait-card">
+                <img src="assets/farhad.png" alt="Portrait of Farhad Nasserghodsi" />
+              </div>
+            </div>
+          </div>
+          <div class="factory-strip" aria-live="polite">
+            <span class="dot"></span>
+            <span>
+              <strong>CareerPilot AI™</strong> is live now. Next on the assembly line:
+              <strong>Magazinify AI™</strong> launches in <span class="countdown" id="daysRemaining">45</span> days.
+            </span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="about">
+      <div class="container">
+        <h2 class="section-title">What this page is for</h2>
+        <p class="section-copy">
+          This founder hub gives people one stable place to find you, understand what you build, and reach the current NOFA AI Factory spotlight without chasing changing links.
+          It works well for QR codes, networking, events, Zoom presentations, and business follow-up.
+        </p>
+        <div class="cards">
+          <article class="card">
+            <h3>One founder identity</h3>
+            <p>
+              A permanent landing page anchored to your name, brand, photo, and business contact information.
+            </p>
+          </article>
+          <article class="card">
+            <h3>One current spotlight</h3>
+            <p>
+              The live SaaS can change over time without changing the QR code people already saved or scanned.
+            </p>
+          </article>
+          <article class="card">
+            <h3>One clean conversion path</h3>
+            <p>
+              Visitors can go directly to the NOFA website, enter your virtual office, call, email, or scan into the live product.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="spotlight">
+      <div class="container spotlight">
+        <article class="card">
+          <div class="label">Current live SaaS</div>
+          <h2 class="section-title" style="margin-bottom:12px;">CareerPilot AI™</h2>
+          <p class="section-copy" style="margin-bottom:0; max-width:none;">
+            CareerPilot AI helps job seekers manage the search in one place. It reduces friction by giving users a direct way to explore jobs,
+            stay organized, and move faster with AI-assisted career support.
+          </p>
+          <div class="metric-grid">
+            <div class="metric">
+              <strong>Live now</strong>
+              <span>Built as part of the NOFA AI Factory shipping pipeline.</span>
+            </div>
+            <div class="metric">
+              <strong>QR ready</strong>
+              <span>Easy to share at events, meetings, and on mobile screens.</span>
+            </div>
+            <div class="metric">
+              <strong>Fast access</strong>
+              <span>Direct link to the live landing page for testing and demos.</span>
+            </div>
+            <div class="metric">
+              <strong>Factory model</strong>
+              <span>One stable founder page with a rotating product spotlight.</span>
+            </div>
+          </div>
+          <div class="hero-actions" style="margin-top:24px;">
+            <a class="btn btn-primary" href="https://nofabusinessconsulting.com/careerpilot-ai/" target="_blank" rel="noopener noreferrer">Open CareerPilot AI</a>
+            <a class="btn btn-secondary" href="https://nofabusinessconsulting.com/solutions-investors/" target="_blank" rel="noopener noreferrer">Solutions & Investors</a>
+          </div>
+        </article>
+        <article class="card spotlight-visual">
+          <img src="assets/nofa-factory-scene.png" alt="NOFA AI Factory image featuring Farhad, a handshake, and factory robotics" />
+        </article>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="container">
+        <h2 class="section-title">Contact and access</h2>
+        <p class="section-copy">
+          Use whichever contact method fits the moment. Business phone, mobile, email, office address, website, and the virtual office are all live here.
+        </p>
+        <div class="contact-grid">
+          <div class="contact-list">
+            <div class="contact-item">
+              <div class="contact-icon">B</div>
+              <div>
+                <small>Business phone</small>
+                <strong><a href="tel:+18552911360">1-855-291-1360</a></strong>
+                <span>Main business line</span>
+              </div>
+            </div>
+            <div class="contact-item">
+              <div class="contact-icon">C</div>
+              <div>
+                <small>Cell phone</small>
+                <strong><a href="tel:+12404261543">240-426-1543</a></strong>
+                <span>Direct mobile contact</span>
+              </div>
+            </div>
+            <div class="contact-item">
+              <div class="contact-icon">@</div>
+              <div>
+                <small>Email</small>
+                <strong><a href="mailto:farhad@nofabusinessconsulting.com">farhad@nofabusinessconsulting.com</a></strong>
+                <span>Best for project discussions and follow-up</span>
+              </div>
+            </div>
+            <div class="contact-item">
+              <div class="contact-icon">W</div>
+              <div>
+                <small>Website</small>
+                <strong><a href="https://nofabusinessconsulting.com/" target="_blank" rel="noopener noreferrer">nofabusinessconsulting.com</a></strong>
+                <span>NOFA AI Factory home base</span>
+              </div>
+            </div>
+            <div class="contact-item">
+              <div class="contact-icon">V</div>
+              <div>
+                <small>Virtual office</small>
+                <strong><a href="https://app.teemyco.com/room/lfdmBqyvzC2U7mZcTkxA/ATmQWTDTlcMZ4ZmKRzCm" target="_blank" rel="noopener noreferrer">Enter Teemyco office</a></strong>
+                <span>For meetings, collaboration, and live office access</span>
+              </div>
+            </div>
+            <div class="contact-item">
+              <div class="contact-icon">A</div>
+              <div>
+                <small>Address</small>
+                <strong>501 Coral Reef Dr., Gaithersburg, MD 20878</strong>
+                <span>Office hours: 9:00 AM–5:00 PM, Monday–Friday</span>
+              </div>
+            </div>
+          </div>
+          <div class="card qr-card">
+            <div class="qr-frame">
+              <img src="assets/careerpilot-qr.png" alt="QR code linking to CareerPilot AI" />
+              <p>
+                Scan to open <strong>CareerPilot AI™</strong> directly on a phone or tablet.
+              </p>
+            </div>
+            <div class="hero-actions" style="margin-top:20px; justify-content:center;">
+              <a class="btn btn-primary" href="https://nofabusinessconsulting.com/careerpilot-ai/" target="_blank" rel="noopener noreferrer">Launch live SaaS</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      © <span id="year"></span> NOFA AI Factory™ · Founder Hub for Farhad Nasserghodsi
+    </div>
+  </footer>
+
+  <script>
+    const launchDate = new Date('2026-05-27T09:00:00-04:00');
+    const daysEl = document.getElementById('daysRemaining');
+
+    function updateCountdown() {
+      const now = new Date();
+      const diff = launchDate.getTime() - now.getTime();
+      const days = Math.max(0, Math.ceil(diff / (1000 * 60 * 60 * 24)));
+      if (daysEl) daysEl.textContent = days;
+    }
+
+    updateCountdown();
+    setInterval(updateCountdown, 60000);
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
